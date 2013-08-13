@@ -16,14 +16,15 @@
 package org.jshybugger.server;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
 import android.util.Log;
-import android.util.SparseArray;
 import android.webkit.JavascriptInterface;
 
 /**
@@ -45,7 +46,7 @@ public abstract class AbstractBrowserInterface implements BrowserInterface {
 	private int replyIdentifier=0;
 	
 	/** The reply receivers. */
-	private SparseArray<ReplyReceiver> replyReceivers = new SparseArray<ReplyReceiver>();
+	private Map<Integer, ReplyReceiver> replyReceivers = new HashMap<Integer, ReplyReceiver>();
 	
 	/** The sync queue mode. */
 	private boolean syncQueueMode = false;
